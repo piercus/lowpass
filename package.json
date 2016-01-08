@@ -1,8 +1,8 @@
 {
-  "name": "wav-lowpass",
+  "name": "lowpass",
   "version": "1.0.0",
-  "description": "Node.js Low pass music filter",
-  "main": "index.js",
+  "description": "Node.js Lowpass music filter",
+  "main": "lib/LowPass.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
