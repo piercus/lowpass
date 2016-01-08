@@ -1,0 +1,31 @@
+{
+  "name": "wav-lowpass",
+  "version": "1.0.0",
+  "description": "Node.js Low pass music filter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piercus/lowpass.git"
+  },
+  "keywords": [
+    "wav",
+    "lowpass",
+    "filter",
+    "music",
+    "node",
+    "nodejs"
+  ],
+  "author": "Pierre Colle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piercus/lowpass/issues"
+  },
+  "homepage": "https://github.com/piercus/lowpass#readme",
+  "devDependencies": {
+    "speaker": "^0.2.6",
+    "wav": "^1.0.0"
+  }
+}
