@@ -24,7 +24,7 @@ var updateBuildUp = function(candidates, max, thres){
 reader.on('format', function (format) {
   ener1 = new EnergyDetector({
     format : format,
-    energyWindow : 0.01,
+    energyWindow : 0.01
   });
 
   var cutter = new Cutter({
@@ -64,18 +64,18 @@ reader.on('format', function (format) {
       console.log(energy, index);
       
       buildUpCandidates.push({
-      value : energy,
-      index : index
-    });
+        value : energy,
+        index : index
+      });
     }
 
   });
 
 
   ener1.on('end',function(){
+    console.log('end');
       var buildUp = updateBuildUp(buildUpCandidates, maxEner, buildUpThres);
-
-      lowpass.unpipe();
+      console.log(buildUp);
   /*
       ener2 = new EnergyDetector({
           format : format,

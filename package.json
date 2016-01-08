@@ -27,5 +27,8 @@
   "devDependencies": {
     "speaker": "^0.2.6",
     "wav": "^1.0.0"
+  },
+  "dependencies": {
+    "stream-parser": "^0.3.1"
   }
 }
