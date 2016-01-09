@@ -1,4 +1,4 @@
-node-wav
+lowpass
 ========
 This module offers a fast and basic (moving average-based) low pass filter to be used with node-wav.
 
@@ -11,7 +11,6 @@ Install through npm:
 ``` bash
 $ npm install lowpass
 ```
-
 
 Example
 -------
@@ -67,5 +66,3 @@ new LowPass({
 ```
 
 By default the cut-off correspond to a 128 length moving average window. For a 44100 sampleRate, it is equivalent to 152Hz low pass filter.
-
-
