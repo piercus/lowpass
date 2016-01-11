@@ -1,7 +1,16 @@
 lowpass
 ========
-This module offers a fast and basic (moving average-based) low pass filter to be used with node-wav.
+Simple nodejs Audio manipulation librairy, based on [node-wav]
 
+This module offers basics nodejs manipulation functions :
+* **WavTransform** : Abstract Stream Class to handle wav streams
+* **LowPass** : fast and basic (moving average-based) low pass filter 
+* **Cutter** : Basic Stream to handle mp3 streams
+* **Wav2energy** : Transform 
+* **getBPM** : soundstretch wrapper for nodejs
+* **getBuildUp** : Build-up detection (when music energy is more than a defined threshold)
+
+Combined with [node-lame] it can also manage mp3 files.
 
 Installation
 ------------
@@ -16,13 +25,13 @@ Example
 -------
 
 Here's how you would use the lowpass filter on a standard PCM WAVE file out of the speakers using 
-`node-wav` and `node-speaker`:
+[node-wav] and [node-speaker] :
 
 ``` javascript
 var fs = require('fs');
 var wav = require('wav');
 var Speaker = require('speaker');
-var LowPass = require('lowpass');
+var LowPass = require('lowpass').LowPass;
 
 var file = fs.createReadStream('input1.wav');
 var reader = new wav.Reader();
@@ -43,7 +52,42 @@ reader.on('format', function (format) {
 file.pipe(reader);
 ```
 
-### LowPass())
+Same example with mp3 file and the [node-lame] package
+
+``` javascript
+var fs = require('fs');
+var wav = require('wav');
+var Speaker = require('speaker');
+var LowPass = require('lowpass').LowPass;
+
+var file = fs.createReadStream('input.mp3');
+var lame = require('lame');
+
+var speaker, lowpass;
+
+// start reading the MP3 file from the input
+var decoder = new lame.Decoder();
+
+// we have to wait for the "format" event before we can start encoding
+decoder.on('format', onFormat);
+
+// and start transferring the data
+file.pipe(decoder);
+
+function onFormat (format) {
+  speaker = new Speaker(format);
+
+  lowPass = new LowPass({
+  	format : format
+  });
+
+  // write the decoded MP3 into the lowpass filter then the speaker
+  decoder.pipe(lowPass).pipe(speaker);
+};
+```
+
+
+### LowPass()
 
 The `LowPass` class accepts the data from node-wav  outputs the raw
 audio data transformed by the low pass.
@@ -66,3 +110,20 @@ new LowPass({
 ```
 
 By default the cut-off correspond to a 128 length moving average window. For a 44100 sampleRate, it is equivalent to 152Hz low pass filter.
+
+### Other tools
+
+See [examples]
+
+Thanks
+--------
+
+Thanks to [TooTallNate] for the published libraries
+
+[node-lame]: https://github.com/TooTallNate/node-lame
+[node-wav]: https://github.com/TooTallNate/node-wav
+[node-speaker]: https://github.com/TooTallNate/node-speaker
+[examples]: https://github.com/piercus/lowpass/tree/master/examples
+[TooTallNate]: https://github.com/TooTallNate
+
+

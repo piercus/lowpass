@@ -1,7 +1,7 @@
 var fs = require('fs');
 var wav = require('wav');
 var Speaker = require('speaker');
-var LowPass = require('../lib/LowPass');
+var LowPass = require('../').LowPass;
 
 var file = fs.createReadStream('input.mp3');
 var lame = require('lame');
