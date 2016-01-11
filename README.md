@@ -2,8 +2,7 @@ lowpass
 ========
 Simple nodejs Audio manipulation librairy, based on [node-wav]
 
-This module offers basics nodejs manipulation functions :
-* **WavTransform** : Abstract Stream Class to handle wav streams
+This module offers basics nodejs manipuji
 * **LowPass** : fast and basic (moving average-based) low pass filter 
 * **Cutter** : Basic Stream to handle mp3 streams
 * **Wav2energy** : Transform 
@@ -94,6 +93,7 @@ audio data transformed by the low pass.
 
 it has the following options :
 ``` javascript
+var LowPass = require('lowpass').LowPass;
 
 //First form
 new LowPass({
@@ -108,8 +108,21 @@ new LowPass({
 });
 
 ```
-
 By default the cut-off correspond to a 128 length moving average window. For a 44100 sampleRate, it is equivalent to 152Hz low pass filter.
+
+### getBPM()
+
+The `getBPM` function call [soundstretch] utility to get the BPM of a song.
+
+``` javascript
+var getBPM = require('lowpass').getBPM;
+
+getBPM("input.wav", function(err, bpm){
+	console.log("BPM is ", bpm);
+});
+
+```
+Be carefull, [soundstretch] must be installed in your system.
 
 ### Other tools
 
