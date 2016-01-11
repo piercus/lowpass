@@ -6,7 +6,7 @@ This module offers basics nodejs manipuji
 * **LowPass** : fast and basic (moving average-based) low pass filter 
 * **Cutter** : Basic Stream to handle mp3 streams
 * **Wav2energy** : Transform 
-* **getBPM** : soundstretch wrapper for nodejs
+* **getBPM** : [soundstretch] wrapper for nodejs
 * **getBuildUp** : Build-up detection (when music energy is more than a defined threshold)
 
 Combined with [node-lame] it can also manage mp3 files.
@@ -138,5 +138,4 @@ Thanks to [TooTallNate] for the published libraries
 [node-speaker]: https://github.com/TooTallNate/node-speaker
 [examples]: https://github.com/piercus/lowpass/tree/master/examples
 [TooTallNate]: https://github.com/TooTallNate
-
-
+[soundstretch]: http://www.surina.net/soundtouch/soundstretch.html

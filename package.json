@@ -29,6 +29,8 @@
     "wav": "^1.0.0"
   },
   "dependencies": {
-    "stream-parser": "^0.3.1"
+    "lame": "^1.2.3",
+    "stream-parser": "^0.3.1",
+    "wav": "^1.0.0"
   }
 }
