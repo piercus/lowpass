@@ -4,5 +4,6 @@ module.exports = {
 	getBPM : require("./lib/getBPM.js"),
 	Wav2energy : require("./lib/Wav2energy.js"),
 	WavTransform : require("./lib/WavTransform.js"),
-	getBuildup : require("./lib/getBuildup.js")
+	getBuildup : require("./lib/getBuildup.js"),
+	getAudioDuration : require("./lib/getAudioDuration.js")
 };
