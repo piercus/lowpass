@@ -1,6 +1,6 @@
 lowpass
 ========
-Simple nodejs Audio manipulation librairy, based on [node-wav]
+Simple nodejs Audio manipulation library, based on [node-wav]
 
 This module offers basics nodejs manipuji
 * **LowPass** : fast and basic (moving average-based) low pass filter 
