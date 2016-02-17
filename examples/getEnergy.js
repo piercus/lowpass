@@ -14,10 +14,10 @@ getAudioDuration(filename,function(err, duration){
 
     getEnergy({
         filename : filename,
-        duration : 78-25,
+        duration : 49.93498049414825,
         movAvLength : 256,
-        range : [25, 78],//only work on 25s to 78s on the song
-        tInterval : 0.89,//0.89 s per window
+        range : [ 0.8081274382314696, 50.743107932379715 ],//only work on 25s to 78s on the song
+        tInterval : 3.120936280884265,//0.89 s per window
         progressCb : function(p){
           var diff = Math.floor(p-lastProgress);
           if(diff > 0){
